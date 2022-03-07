@@ -13,22 +13,22 @@ public class ShortLong {
         for (int i = 0; i < size; i++) {
             nums[i] = scan.nextInt();
         }
-        String minStr = null, maxStr = null;
-        int minc, maxc;
-        int min = nums[0];
-        int max = nums[0];
+        int min1 = nums[0], max1 = nums[0];
+        int min = (String.valueOf(Math.abs(nums[0]))).length();
+        int max = (String.valueOf(Math.abs(nums[0]))).length();
         for (int x : nums) {
-            if (x < min) min = x;
+            if ((String.valueOf(Math.abs(x))).length() < min) {
+                min = (String.valueOf(Math.abs(x))).length();
+                min1 = x;
+            }
         }
-        minStr = String.valueOf(min);
-        minc = minStr.length();
         for (int x : nums) {
-            if (x > max) max = x;
+            if ((String.valueOf(Math.abs(x))).length() > max) {
+                max = (String.valueOf(Math.abs(x))).length();
+                max1 = x;
+            }
         }
-        maxStr = String.valueOf(max);
-        maxc = maxStr.length();
-
-        System.out.println("Самое короткое число " + min + " состоит из " + minc + " чисел");
-        System.out.println("Самое длинное число " + max + " состоит из " + maxc + " чисел");
+        System.out.println("Самое короткое число " + min1 + " состоит из " + min + " чисел");
+        System.out.println("Самое длинное число " + max1 + " состоит из " + max + " чисел");
     }
 }

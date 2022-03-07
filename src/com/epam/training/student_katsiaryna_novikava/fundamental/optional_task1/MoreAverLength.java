@@ -17,6 +17,7 @@ public class MoreAverLength {
         double sum = 0;
         int ex;
         for (int y : nums) {
+            y = Math.abs(y);
             ex = (String.valueOf(y)).length();
             sum += ex;
         }
@@ -24,8 +25,9 @@ public class MoreAverLength {
         System.out.println("Средняя длина всех чисел " + average);
         int n = 0;
         for (int x : nums) {
-            if ((String.valueOf(x)).length() > average) {
-                System.out.println("Число " + x + " с длиной больше средней.Его длина равна " + (String.valueOf(x)).length());
+//            x=Math.abs(x);
+            if ((String.valueOf(Math.abs(x))).length() > average) {
+                System.out.println("Число " + x + " с длиной больше средней.Его длина равна " + (String.valueOf(Math.abs(x))).length());
                 n++;
             }
         }
